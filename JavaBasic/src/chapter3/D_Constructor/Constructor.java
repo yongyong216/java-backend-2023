@@ -18,7 +18,7 @@ class Circle {
 	// 클래스명 ([파라미터[, ...]]) { 인스턴스 생성시 실행할 코드 }
 	Circle(double radius) {
 		System.out.println("Circle이 생성됩니다.");
-		// this: 인스턴스 자신
+		// this: 인스턴스 자신(위에 있는 글로벌을 가르키고 있다.)
 		this.radius = radius;
 		this.diameter = 2 * radius;
 		this.circumference = 3.14 * 2 * radius;
@@ -58,8 +58,6 @@ public class Constructor {
 		
 		System.out.println(circle1.area);
 		System.out.println(circle2.area);
-		
-
 		
 	}
 
