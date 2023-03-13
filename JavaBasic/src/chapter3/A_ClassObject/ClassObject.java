@@ -1,5 +1,8 @@
 package chapter3.A_ClassObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // class
 // 객체를 정의해 놓은 것
 // 객체를 생성하는 기반
@@ -118,6 +121,22 @@ public class ClassObject {
 		for (SmartPhone phone : smartPhoneList){
 			System.out.println(phone);
 		}
+		
+		
+		System.out.println("========================================================");
+		
+		// map
+		// key와 value가 하나의 쌍으로 저장되는 구조
+		// 순서가 존재하지 않음, 단 key를 사용해서 특정한 value를 가져올 수 있음
+		
+		// HashMap<E, E>
+		Map<String, String> hashMap = new HashMap<String, String>();
+		
+		hashMap.put("key", "value");
+		hashMap.put("apple", "사과");
+		
+		System.out.println(hashMap.get("apple"));   
+		
 	}
 
 
