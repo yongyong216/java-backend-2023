@@ -28,4 +28,8 @@ public class Cost {
 				",amount: " + this.amount+ "]";
 	}
 
+	public String getArrivalStation() {
+		return this.arrivalStation;
+	}
+
 }

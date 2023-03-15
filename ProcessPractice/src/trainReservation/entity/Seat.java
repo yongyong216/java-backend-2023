@@ -26,6 +26,11 @@ public class Seat {
 		return seatStatus;
 	}
 
+	public void setSeatStatus(boolean seatStatus) {
+		this.seatStatus = seatStatus;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Seat [roomNumber=" + roomNumber + ", seatNumber=" + seatNumber + ", seatStatus=" + seatStatus + "]";
