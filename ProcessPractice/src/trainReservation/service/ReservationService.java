@@ -5,6 +5,20 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import trainReservation.dto.GetReservationDto;
+import trainReservation.dto.GetTrainListDto;
+import trainReservation.dto.PostReservationDto;
+import trainReservation.entity.Cost;
+import trainReservation.entity.ReservationInfo;
+import trainReservation.entity.Seat;
+import trainReservation.entity.StopStation;
+import trainReservation.entity.Train;
+
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+import trainReservation.dto.GetReservationDto;
 import trainReservation.dto.GetTrainListDto;
 import trainReservation.dto.PostReservationDto;
 import trainReservation.entity.Cost;
@@ -35,6 +49,7 @@ public class ReservationService {
 		for (Train train: trains) {
 			
 			List<StopStation> stopStations = train.getStopStations();
+			
 			int sameStationIndex = -1;
 			
 			for (int stopStationIndex = 0; stopStationIndex < stopStations.size(); stopStationIndex++) {
@@ -42,9 +57,9 @@ public class ReservationService {
 				String stopStationName = stopStation.getStationName();
 				
 				if (!dto.isEqualDepartureStation(stopStationName)) continue;
-				
+				if (stopStation.getDepartureTime().equals("")) continue;
 				LocalTime stationDepartureTime = LocalTime.parse(stopStation.getDepartureTime(), timeFormatter);
-				
+
 				if (stationDepartureTime.isBefore(departureTime)) break;
 				
 				sameStationIndex = stopStationIndex;
@@ -175,6 +190,30 @@ public class ReservationService {
 		return reservationInfo;
 	
 	}
+	
+	
+	public ReservationInfo getReservation(GetReservationDto dto) {
+		
+		ReservationInfo reservationInfo = null;
+		String reservationNumber = dto.getReservationNumber();
+		
+		for (ReservationInfo item: reservations) {
+			
+			boolean isEqualReservationNumber = 
+					reservationNumber.equals(item.getReservationNumber());
+			if(!isEqualReservationNumber) continue;
+			
+			reservationInfo = item;
+			break;
+			
+		}
+		
+		return reservationInfo;
+		
+		
+		
+	}
+	
 	
 	private static void initData() {
 		

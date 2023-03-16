@@ -4,6 +4,17 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import trainReservation.dto.GetReservationDto;
+import trainReservation.dto.GetTrainListDto;
+import trainReservation.dto.PostReservationDto;
+import trainReservation.entity.ReservationInfo;
+import trainReservation.entity.Train;
+import trainReservation.service.ReservationService;
+
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import trainReservation.dto.GetReservationDto;
 import trainReservation.dto.GetTrainListDto;
 import trainReservation.dto.PostReservationDto;
 import trainReservation.entity.ReservationInfo;
@@ -18,13 +29,17 @@ public class ReservationController {
 	
 	private ReservationService reservationService;
 	
+	private GetTrainListDto getTrainListDto;
+	private GetReservationDto getReservationDto;
+	private PostReservationDto postReservationDto;
+	
 	public ReservationController() {
 		this.reservationService = new ReservationService();
 	}
 	
 	public void reservation() {
 		while (true) {
-			GetTrainListDto getTrainListDto = new GetTrainListDto();
+			 getTrainListDto = new GetTrainListDto();
 			
 			LocalTime departureTime = null;
 			
@@ -54,21 +69,68 @@ public class ReservationController {
 			
 			System.out.println(possibleTrains.toString());
 			
+			postReservation();
+			break;
+		}
+		
+	}
+
+	public void postReservation() {
+		
+		
+		while (true) {
 			
-			ReservationInfo reservationInfo =null;
-			while (true) {
-				
-				PostReservationDto postReservationDto = new PostReservationDto(getTrainListDto.getNumberOfPeople());
-				reservationInfo = reservationService.postReservation(postReservationDto, getTrainListDto);
-				if (reservationInfo == null) continue;
-				break;
-			}
+			postReservationDto = new PostReservationDto(getTrainListDto.getNumberOfPeople());
+			
+			ReservationInfo reservationInfo = reservationService.postReservation(postReservationDto, getTrainListDto);
+			if (reservationInfo == null) continue;
 			
 			System.out.println(reservationInfo.toString());
+			break;
+		}
+		
+	}
+	
+	public void getReservation() {
+		
+		while(true) {
 			
+			getReservationDto = new GetReservationDto();
+			String reservationNumber = getReservationDto.getReservationNumber();
+			
+			if(reservationNumber.isBlank()) {
+				System.out.println("예약번호를 입력하세요.");
+				continue;
+			}
+			
+			ReservationInfo reservationInfo = 
+					reservationService.getReservation(getReservationDto);
+			
+			
+//			if(reservationInfo == null) {
+//				System.out.println("해당 예약번호의 예약정보가 없습니다.");
+//				break;
+//			}
+			
+			//삼항연산자를 조건 걸고서 값을 반환값을 지정해준다.(사용하는건 비추천), 문법 복습겸 사용해봤음
+			String message = 
+					reservationInfo == null ? "해당하는 예약번호가 없습니다."   // 에러 메세지
+										    :reservationInfo.toString(); //정확한 정보결과 반환
+			
+			System.out.println(message);
+			break;
 			
 			
 		}
+		
 	}
 
+	
+	
+	
+	
 }
+
+
+
+
