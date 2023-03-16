@@ -13,7 +13,6 @@
     <fullyQualifiedTypeName name="chapter4.D_Interface.ExampleInterface"/>
     <fullyQualifiedTypeName name="example.exchange.ExchangeRate"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
@@ -42,10 +41,12 @@
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
     <fullyQualifiedTypeName name="trainReservation.dto.GetTrainListDto"/>
     <fullyQualifiedTypeName name="trainReservation.entity.StopStation"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="trainReservation.dto.PostReservationDto"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="trainReservation.entity.ReservationInfo"/>
+    <fullyQualifiedTypeName name="trainReservation.dto.GetReservationDto"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
