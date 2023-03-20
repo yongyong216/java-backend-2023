@@ -6,6 +6,7 @@ import board.common.constant.HttpStatus;
 import board.controller.BoardController;
 // UserController 입력은 받는것은 여기서
 import board.controller.UserController;
+import board.dto.request.board.PostBoardDto;
 import board.dto.request.user.SignInDto;
 import board.dto.request.user.SignUpDto;
 import board.repository.BoardRepository;
@@ -17,8 +18,17 @@ public class BoardApplication {
 	private static BoardController boardController = new BoardController();
 	
 	
-	private static final String SIGN_UP = "POST / sign-up";
-	private static final String SIGN_IN = "POST /sign -in";
+	private static final String SIGN_UP = "POST / sign-up"; // 작성하다
+	private static final String SIGN_IN = "POST / sign -in";
+	
+	private static final String POST_BOARD ="POST / board ";
+	
+	private static final String GET_BOARD = "GET / board"; // 가져오다
+	private static final String GET_BOARD_LIST = "GET / board/ list";
+	
+	private static final String PATCH_BOARO = "PATCH / board"; // 덮어씌우다
+	
+	private static final String DELETE_BOARD = "DELETE / board"; // 삭제하다
 	
 	
 	public static void main(String[] args) {
@@ -66,6 +76,45 @@ public class BoardApplication {
 				userController.signIn(signInDto);
 				
 				break;
+			case POST_BOARD:
+				PostBoardDto postBoardDto = new PostBoardDto();
+				System.out.println("제목 : ");
+				postBoardDto.setTitle(scanner.nextLine());
+				System.out.println("내용 : ");
+				postBoardDto.setContent(scanner.nextLine());
+				System.out.println("이미지 : ");
+				postBoardDto.setBoardImageUrl(scanner.nextLine());
+				System.out.println("작성자 이메일 :");
+				postBoardDto.setWriterEmail(scanner.nextLine());
+				
+			boardController.postBoard(postBoardDto);
+			break;
+				
+			case GET_BOARD_LIST:
+				
+				boardController.getBoardList();
+				break;
+			
+				
+				
+			case GET_BOARD:
+				
+				//외부에서 내부로 데이터를 받아온다. 
+				//예외처리를 한다.
+				int boardNumber = 0;
+				try {
+					System.out.print("게시물 번호 : ");
+					 boardNumber = scanner.nextInt();
+				}catch (Exception exception) {
+					exception.printStackTrace();
+					continue;
+				}
+				
+				boardController.getBoard(boardNumber);
+				 
+				
+				
+				
 			default:
 				System.out.println(HttpStatus.NOT_FOUND);  //찾을 수 없을 때 404 Not Found 사용
 				

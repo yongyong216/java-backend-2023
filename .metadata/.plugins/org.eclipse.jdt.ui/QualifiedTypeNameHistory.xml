@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="chapter3.D_Constructor.Circle"/>
-    <fullyQualifiedTypeName name="chapter3.E_Inheritance.Developer"/>
-    <fullyQualifiedTypeName name="chapter3.F_Overriding.Developer"/>
-    <fullyQualifiedTypeName name="chapter3.F_Overriding.Human"/>
-    <fullyQualifiedTypeName name="chapter4.A_AccessModifier.Example4"/>
-    <fullyQualifiedTypeName name="chapter4.A_Modifier.Example1"/>
-    <fullyQualifiedTypeName name="chapter4.C_AbstractClass.Abstract"/>
     <fullyQualifiedTypeName name="chapter4.D_Interface.ExampleInterface"/>
     <fullyQualifiedTypeName name="example.exchange.ExchangeRate"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
-    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="java.time.Month"/>
@@ -41,23 +33,31 @@
     <fullyQualifiedTypeName name="trainReservation.dto.PostReservationDto"/>
     <fullyQualifiedTypeName name="trainReservation.entity.ReservationInfo"/>
     <fullyQualifiedTypeName name="trainReservation.dto.GetReservationDto"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="board.controller.UserController"/>
     <fullyQualifiedTypeName name="board.dto.request.user.SignUpDto"/>
-    <fullyQualifiedTypeName name="board.repository.UserRepository"/>
     <fullyQualifiedTypeName name="board.service.UserService"/>
     <fullyQualifiedTypeName name="board.common.constant.ResponseMessage"/>
-    <fullyQualifiedTypeName name="board.common.constant.HttpStatus"/>
-    <fullyQualifiedTypeName name="board.entity.User"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
-    <fullyQualifiedTypeName name="board.dto.response.ResponseDto"/>
     <fullyQualifiedTypeName name="board.dto.request.user.SignInDto"/>
     <fullyQualifiedTypeName name="board.dto.response.user.SignInResponseDto"/>
     <fullyQualifiedTypeName name="board.controller.BoardController"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="board.dto.response.board.PostBoardDto"/>
+    <fullyQualifiedTypeName name="board.common.constant.HttpStatus"/>
+    <fullyQualifiedTypeName name="board.dto.request.board.PostBoardDto"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="board.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="board.entity.User"/>
     <fullyQualifiedTypeName name="board.service.BoardService"/>
+    <fullyQualifiedTypeName name="board.dto.response.board.PostBoardResponsDto"/>
     <fullyQualifiedTypeName name="board.repository.BoardRepository"/>
+    <fullyQualifiedTypeName name="board.dto.response.board.GetBoardListResponseDto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="board.entity.Like"/>
+    <fullyQualifiedTypeName name="board.entity.Comment"/>
     <fullyQualifiedTypeName name="board.entity.Board"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="board.dto.response.ResponseDto"/>
+    <fullyQualifiedTypeName name="board.dto.response.board.GetBoardResponseDto"/>
 </qualifiedTypeNameHistroy>
